@@ -1,0 +1,81 @@
+@import "./variables.scss";
+
+.dash-container{
+    h2{
+        letter-spacing: 2px;
+    }
+    .dash-box{
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 12px 25px -2px rgb(156, 154, 154);
+        .dash-info{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            .info-desc{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                span{
+                    font-size: 12px;
+                    color: #5F5F5F;
+                    font-weight: bold;
+                }
+                h2{
+                    font-size: 2.5rem;
+                    @media(max-width: 1366px){
+                        font-size: 2rem;
+                    }
+                }
+            }
+            .info-avatar{
+                margin-right: 5px;
+            }
+        }
+        .dash-feedback{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #5F5F5F;
+            font-weight: bold;
+            span{
+                &.increase{
+                    color: #21BA45;
+                }
+                &.descrease{
+                    color: #FC326C;
+                }
+            }
+        }
+    }
+    .chart-box{
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 12px 25px -2px rgb(156, 154, 154);
+        .title{
+            position: absolute;
+            padding: 20px 50px;
+            top: 0;
+            left: 0;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .chart{
+            margin-top: 50px;
+            height: 400px;
+            // Grafiğin responsive olması için eklendi.
+            @media(max-width: $laptop){
+                height: 300px;
+            }
+        }
+        
+    }
+}

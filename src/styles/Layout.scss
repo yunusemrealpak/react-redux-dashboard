@@ -1,0 +1,105 @@
+@import "./variables.scss";
+
+.app{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .app-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .app-router{
+      position: relative;
+      margin-left: 15%;
+      padding: 25px 50px 0px 50px;
+      width: 100%;
+      height: 100%;
+      .app-bg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -5;
+      }
+    }
+  }
+  @media(max-width: $widescreen){
+    .app-container{
+      .app-router{
+        margin-left: 20%;
+      }
+    }
+  }
+  @media(max-width: $widescreen) and (orientation: portrait){
+    .app-container{
+      .app-router{
+        margin-left: 20%;
+        padding: 50px 50px 0px 50px;
+      }
+    }
+  }
+  @media(max-width: $widescreen) and (orientation: landscape){
+    .app-container{
+      .app-router{
+        margin-left: 20%;
+        padding: 50px 50px 0px 0px;
+      }
+    }
+  }
+  @media(max-width: $desktop) and (orientation: portrait){
+    .app-container{
+      .app-router{
+        margin-left: 15%;
+        padding: 50px 50px 0px 0px;
+      }
+    }
+  }
+  @media(max-width: $desktop) and (orientation: landscape){
+    .app-container{
+      .app-router{
+        margin-left: 15%;
+        padding: 25px 50px 0px 0px;
+      }
+    }
+  }
+  @media(max-width: $laptop) and (orientation: landscape){
+    .app-container{
+      .app-router{
+        margin-top: 50px;
+        margin-left: 0px;
+        padding: 25px 50px 0px 75px;
+      }
+    }
+  }
+  @media(max-width: $tablet) and (orientation: portrait){
+    .app-container{
+      .app-router{
+        margin-top: 50px;
+        margin-left: 0px;
+        padding: 25px 40px 0px 65px;
+      }
+    }
+  }
+  @media(max-width: $tablet) and (orientation: landscape){
+    .app-container{
+      .app-router{
+        margin-top: 50px;
+        margin-left: 0px;
+        padding: 10px;
+      }
+    }
+  }
+  @media(max-width: $mobile){
+    .app-container{
+      .app-router{
+        margin-top: 15px;
+        margin-left: 0px;
+        padding: 50px 5px 0px 5px;
+      }
+    }
+  }
+}
+

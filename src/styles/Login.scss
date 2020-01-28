@@ -1,0 +1,374 @@
+@import './variables.scss';
+
+.login-container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    .background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.4);
+        }
+    }
+    .loading{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.active{
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.76);
+        }
+    }
+    .login-box{
+        position: relative;
+        margin-left: 12%;
+        padding: 70px 6%;
+        width: 550px;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #fff;
+        color: #614C45;
+        box-shadow:
+        /*bottom shadow*/
+        0px 20px 20px rgba(0,0,0,0.2),
+        0px 5px 10px rgba(0,0,0,0.2),
+        /*long bottom shadow*/
+        0px 70px 50px rgba(0,0,0,0.4),
+        /*right shadow*/
+        30px 50px 50px rgba(0,0,0,0.2),
+        /*left shadow*/
+        -30px 50px 50px rgba(0,0,0,0.2),
+        /*right inset*/
+        inset 20px 0px 60px rgba(0,0,0,0.1),
+        /*left inset*/
+        inset -20px 0px 60px rgba(0,0,0,0.1);
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        .logo{
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            margin-bottom: 75px;
+        }
+        .title{
+            font-size: 20px;
+        }
+        .fields{
+            width: 100%;
+            padding: 60px 5px 30px 5px;
+            .error{
+                color: rgb(121, 3, 3);
+                font-size: 13px;
+            }
+            input {
+                border: none;
+                outline: none;
+                background: none;
+                font-size: 14px;
+                font-family: 'Lato', sans-serif;
+                color: #000;
+                padding: 10px 10px 10px 5px;
+            }
+            .username, .password {
+                display: block;
+                border-bottom: 1px solid #b3b3b3;
+                margin-bottom: 30px;
+            }
+            .forgot{
+                font-size: 12px;
+                text-align: center;
+                span{
+                    cursor: pointer;
+                    color: #B9004A;
+                    font-weight: bold;
+                }
+            }
+        }
+        .signin-button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            color: #D0A1AF;
+            letter-spacing: 1px;
+            background: linear-gradient(to left, #E7005B, #B9004A);
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            transition: .7s all;
+            &:hover {
+                color: #fff;
+                background: linear-gradient(to right, rgb(112, 110, 111), rgb(34, 34, 34));
+            }
+            &:active {
+                background: linear-gradient(to left, #E7005B, #B9004A);
+            }
+        }
+    }
+    @media(max-width: $widescreen){
+        .login-box{
+            padding: 40px 5%;
+            width: 425px;
+            height: 80%;
+            .logo{
+                width: 100px;
+                height: 100px;
+            }
+            .title{
+                font-size: 14px;
+            }
+            .fields{
+                input{
+                    font-size: 12px;
+                }
+            }
+            .signin-button{
+                height: 30px;
+                font-size: 12px;
+            }
+        }
+    }
+    @media(max-width: $desktop) and (orientation: landscape){
+        .login-box{
+            width: 425px;
+            height: 80%;
+            .logo{
+                width: 100px;
+                height: 100px;
+            }
+            .title{
+                font-size: 14px;
+            }
+            .fields{
+                input{
+                    font-size: 12px;
+                }
+            }
+            .signin-button{
+                height: 40px;
+                font-size: 12px;
+            }
+        }
+    }
+    @media(max-width: $desktop) and (orientation: portrait){
+        .login-box{
+            width: 55%;
+            .logo{
+                margin-bottom: 20px;
+                width: 150px;
+                height: 150px;
+            }
+            .fields{
+                input{
+                    font-size: 14px;
+                }
+                .forgot{
+                    font-size: 12px;
+                }
+            }
+            .signin-button{
+                height: 50px;
+            }
+        }
+    }
+    @media(max-width: $laptop) and (orientation: landscape){
+        height: auto;
+        .login-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 10px 200px;
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            opacity: 0.8;
+            .logo{
+                margin-bottom: 20px;
+                width: 100px;
+                height: 100px;
+            }
+            .title{
+                font-size: 14px;
+            }
+            .fields{
+                input{
+                    font-size: 12px;
+                }
+                .forgot{
+                    font-size: 10px;
+                }
+            }
+            .signin-button{
+                height: 50px;
+                font-size: 12px;
+            }
+        }
+    }
+    @media(max-width: $tablet){
+        display: flex;
+        justify-content: center;
+        .login-box{
+            margin: 0;
+            width: 400px;
+            height: 75%;
+            border-radius: 0;
+        }
+    }
+    @media(max-width: $tablet) and (orientation: landscape){
+        height: auto;
+        .login-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 10px 150px;
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            opacity: 0.8;
+            .logo{
+                margin-bottom: 20px;
+                width: 100px;
+                height: 100px;
+            }
+            .title{
+                font-size: 14px;
+            }
+            .fields{
+                input{
+                    font-size: 12px;
+                }
+                .forgot{
+                    font-size: 10px;
+                }
+            }
+            .signin-button{
+                width: 50%;
+                height: 50px;
+                font-size: 10px;
+            }
+        }
+    }
+    @media(max-width: $landscape) and (orientation: landscape){
+        height: auto;
+        .login-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 10px 50px;
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            opacity: 0.8;
+            .logo{
+                margin-bottom: 20px;
+                width: 100px;
+                height: 100px;
+            }
+            .title{
+                font-size: 14px;
+            }
+            .fields{
+                input{
+                    font-size: 12px;
+                }
+                .forgot{
+                    font-size: 10px;
+                }
+            }
+            .signin-button{
+                width: 50%;
+                height: 50px;
+                font-size: 10px;
+            }
+        }
+    }
+    @media(max-width: $mobile){
+        .login-box{
+            margin: 0;
+            padding: 10px 30px;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            .logo{
+                margin-bottom: 5px;
+                width: 100px;
+                height: 100px;
+            }
+            .title{
+                font-size: 16px;
+            }
+            .fields{
+                input{
+                    font-size: 12px;
+                }
+                .forgot{
+                    font-size: 10px;
+                }
+            }
+            .signin-button{
+                height: 28px;
+                font-size: 10px;
+            }
+        }
+    }
+    @media(max-width: $mobile) and (orientation: landscape){
+        .login-box{
+            margin: 0;
+            padding: 10px 30px;
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+            .logo{
+                margin-bottom: 5px;
+                width: 100px;
+                height: 100px;
+            }
+            .title{
+                font-size: 16px;
+            }
+            .fields{
+                input{
+                    font-size: 12px;
+                }
+                .forgot{
+                    font-size: 10px;
+                }
+            }
+            .signin-button{
+                height: 28px;
+                font-size: 10px;
+            }
+        }
+    }
+}
